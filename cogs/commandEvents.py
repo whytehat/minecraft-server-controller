@@ -105,21 +105,21 @@ class CommandHandler(commands.Cog):
         self.channel = discord.utils.get(self.client.get_all_channels(), name='ban-kick-logs')
         await member.ban(reason=reason)
         await ctx.send(f"the ban hammer has stuck {member.mention}")
-        await self.channel.send(f"{member.mention} was banned for {reason}")
+        await self.LogChannel.send(f"{member.mention} was banned for {reason}")
 
     @commands.command()
     @commands.has_role("admin")  
     async def nuke(self,ctx):
         self.nukelimt = 999999999999999
         await ctx.channel.purge(limit=self.nukelimt)
-        await ctx.send(f"this channel has been nuked by your friends in the USA!!!")
+        await ctx.send(f"this channel has been nuked")
 
     @commands.command()
     @commands.has_role("admin")  
     async def clear(self,ctx,amount):
         self.clearAmount = int(amount)
         await ctx.channel.purge(limit=self.clearAmount)
-        await ctx.send(f"this channel has been nuked by your friends in the USA!!!")
+        await ctx.send(f"this channel was cleared for {self.clearAmount}")
 
     @commands.command()
     @commands.has_role("admin")
