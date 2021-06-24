@@ -1,6 +1,8 @@
 # minecraft-server-controller
 a python discord bot that can control a minecraft server
 
+currently supports only 1 server will most likey added support for multiple servers in the future
+
 
 # how to use 
 1. place the bot key into the main.py file where it says to
