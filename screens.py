@@ -2,8 +2,9 @@ import subprocess, time, requests, json
 
 class controller():
 
-    def __init__(self, ScreenID):
+    def __init__(self, ScreenID,RamAmount):
         self.screenid = ScreenID
+        self.RamAmount = RamAmount
 
     def whitelist_Add(self,player_name):
         self.user = str(player_name)
@@ -31,7 +32,7 @@ class controller():
         return True
     
     def Start(self):
-        subprocess.call(f'screen -S {self.screenid} -p 0 -X stuff "java -Xmx20G -Xms20G -jar server.jar nogui^M"', shell=True)
+        subprocess.call(f'screen -S {self.screenid} -p 0 -X stuff "java -Xmx{self.RamAmount}G -Xms{self.RamAmount}G -jar server.jar nogui^M"', shell=True)
         return True
 
     def Stop(self):
