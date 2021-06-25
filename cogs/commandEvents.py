@@ -6,7 +6,7 @@ class CommandHandler(commands.Cog):
     def __init__(self, client):
         self.client = client
         self.LogChannel = "replace with logchannel id as just numbers not as a string"
-        self.control = screens.controller('place screen id in here')
+        self.control = screens.controller('place screen id in here',"amount of ram")
         
     @commands.command()
     @commands.has_role("smp_controller")
